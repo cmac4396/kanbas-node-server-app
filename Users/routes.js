@@ -49,7 +49,6 @@ export default function UserRoutes(app) {
               res.json(currentUser);
             }
           });
-        res.json(currentUser);
       } else {
         res.sendStatus(401);
       }
