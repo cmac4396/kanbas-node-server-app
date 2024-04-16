@@ -1,11 +1,13 @@
 import * as dao from "./dao.js";
 function ModuleRoutes(app) {
   const createModule = async (req, res) => {
-    const module = await dao.createModule(req.body);
+    const { cid } = req.params;
+    const module = await dao.createModule(cid, req.body);
     res.json(module);
   };
   const deleteModule = async (req, res) => {
-    const status = await dao.deleteModule(req.params.moduleId);
+    const { mid } = req.params;
+    const status = await dao.deleteModule(mid);
     res.json(status);
   };
   const updateModule = async (req, res) => {
